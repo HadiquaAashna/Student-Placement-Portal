@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CompanyDashboard from '../../components/Company/CompanyDashboard.jsx';
+---
+
+<Layout 
+  title="Company Dashboard | CampusConnect"
+  description="Manage your corporate profile, publish vacancies, filter candidate applications, shortlist profiles, and update candidate statuses."
+>
+  <CompanyDashboard client:only="react" />
+</Layout>

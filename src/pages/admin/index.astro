@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AdminPage from '../../components/Admin/AdminPage.jsx';
+---
+
+<Layout 
+  title="Admin Login | CampusConnect"
+  description="Administrator sign in and placement cell control desk for the CampusConnect student placement portal."
+>
+  <AdminPage client:only="react" />
+</Layout>

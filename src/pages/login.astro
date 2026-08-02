@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PortalChooser from '../components/Auth/PortalChooser.jsx';
+---
+
+<Layout 
+  title="Sign In | CampusConnect"
+  description="Sign in to the CampusConnect Student Placement Portal. Choose the Student, Recruiter, or Admin portal to continue."
+>
+  <PortalChooser client:only="react" />
+</Layout>

@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AppIdLoginPage from '../../components/Auth/AppIdLoginPage.jsx';
+---
+
+<Layout 
+  title="Company Login | CampusConnect"
+  description="Sign in to the CampusConnect Recruiter Portal using IBM App ID single sign-on to publish vacancies and manage campus applications."
+>
+  <AppIdLoginPage role="company" client:only="react" />
+</Layout>

@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StudentDashboard from '../../components/Student/StudentDashboard.jsx';
+---
+
+<Layout 
+  title="Student Dashboard | CampusConnect"
+  description="Manage your professional student placement profile, search recommended jobs, apply for vacancies, check updates, and interact with the AI bot."
+>
+  <StudentDashboard client:only="react" />
+</Layout>

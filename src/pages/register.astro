@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RegisterPage from '../components/Auth/RegisterPage.jsx';
+---
+
+<Layout 
+  title="Register | CampusConnect"
+  description="Create your account on the CampusConnect student placement cell to explore career opportunities or recruit campus talent."
+>
+  <RegisterPage client:only="react" />
+</Layout>
