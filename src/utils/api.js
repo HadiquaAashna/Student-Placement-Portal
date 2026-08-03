@@ -1,6 +1,6 @@
 import { getToken, clearSession } from './auth.js';
 
-export const API_BASE_URL = import.meta.env.PUBLIC_API_URL || 'http://localhost:5000/api';
+export const API_BASE_URL = import.meta.env.PUBLIC_API_URL || 'https://student-placement-portal-uzqi.onrender.com/api';
 
 // Build a browser-resolvable URL for locally stored uploads. The backend stores
 // relative paths like "/uploads/xyz.pdf"; on the frontend those would resolve to
