@@ -27,7 +27,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:4321', 'http://127.0.0.1:4321'], // Astro default dev server ports
+  origin: [
+    'http://localhost:4321',
+    'http://127.0.0.1:4321',
+    'https://student-placement-portal-chi.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json());
