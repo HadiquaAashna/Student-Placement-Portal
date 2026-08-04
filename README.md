@@ -1,46 +1,57 @@
-# Astro Starter Kit: Basics
+# Secure User Authentication for Web Apps with IBM Cloud App ID
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Student Placement Portal
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+A full-stack Student Placement Portal that demonstrates secure user authentication using IBM Cloud App ID. The platform enables students, companies, and administrators to securely access their respective dashboards while providing a modern recruitment and placement management system.
 
-## 🚀 Project Structure
+## Project Overview
 
-Inside of your Astro project, you'll see the following folders and files:
+This project implements secure authentication and authorization using IBM Cloud App ID integrated with a Student Placement Portal. It provides role-based access for Students, Companies, and Administrators while ensuring secure login, session management, and protected routes.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Key Features
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- IBM Cloud App ID Authentication
+- Secure Login & Logout
+- Role-Based Access Control (Student, Company, Admin)
+- Student Dashboard
+- Company Dashboard
+- Admin Dashboard
+- Job Posting & Management
+- Job Application System
+- MongoDB Atlas Database
+- JWT-based Authorization
+- Responsive UI
 
-## 🧞 Commands
+## Tech Stack
 
-All commands are run from the root of the project, from a terminal:
+**Frontend**
+- Astro
+- React
+- Tailwind CSS
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Backend**
+- Node.js
+- Express.js
 
-## 👀 Want to learn more?
+**Database**
+- MongoDB Atlas
+- Mongoose
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Authentication**
+- IBM Cloud App ID
+- JWT
+- Express Session
+
+## Deployment
+
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
+
+## Live Demo
+
+https://student-placement-portal-chi.vercel.app/
+
+## Author
+
+**Hadiqua Aashna**
