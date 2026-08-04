@@ -43,6 +43,7 @@ setupAppIdAuth(app);
 // Resolve path details for local static upload support
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Mount API Routes
