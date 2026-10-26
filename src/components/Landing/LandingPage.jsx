@@ -343,15 +343,40 @@ function FaqSection() {
 function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.name && formData.email) {
-      setSent(true);
-      setTimeout(() => {
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '34875612-c21b-4da5-8b01-5b6b04449c2a',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: 'New Contact Message — Student Placement Portal',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSent(true);
         setFormData({ name: '', email: '', message: '' });
-        setSent(false);
-      }, 3000);
+        setTimeout(() => setSent(false), 4000);
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please check your connection.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -407,11 +432,13 @@ function ContactSection() {
 
         <button 
           type="submit" 
-          disabled={sent}
-          className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-hover py-2.5 rounded-md transition-colors disabled:bg-success-green disabled:cursor-default cursor-pointer mt-2"
+          disabled={sent || loading}
+          className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-hover py-2.5 rounded-md transition-colors disabled:opacity-70 disabled:cursor-default cursor-pointer mt-2"
         >
           {sent ? (
-            <span>Message Sent Successfully!</span>
+            <span>✅ Message Sent Successfully!</span>
+          ) : loading ? (
+            <span>Sending...</span>
           ) : (
             <>
               <span>Send Message</span>
@@ -419,6 +446,10 @@ function ContactSection() {
             </>
           )}
         </button>
+
+        {error && (
+          <p className="text-xs text-red-400 text-center mt-1">{error}</p>
+        )}
       </form>
     </section>
   );

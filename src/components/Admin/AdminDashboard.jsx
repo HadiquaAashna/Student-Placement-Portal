@@ -5,7 +5,7 @@ import {
   XCircle, ToggleLeft, ToggleRight, Trash2, Search, MapPin, 
   ExternalLink, Download, FileCode, Check, RefreshCw, BarChart2, Globe
 } from 'lucide-react';
-import { api } from '../../utils/api.js';
+import { api, fileUrl } from '../../utils/api.js';
 import { isAuthenticated, getRole, clearSession } from '../../utils/auth.js';
 
 export default function AdminDashboard() {
@@ -420,7 +420,7 @@ export default function AdminDashboard() {
                           <td className="py-3 text-ink font-mono">{stud.cgpa ? `${stud.cgpa} CGPA` : '0.00'}</td>
                           <td className="py-3 text-right">
                             {stud.resumeUrl ? (
-                              <a href={stud.resumeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[10px] text-primary hover:underline font-semibold">
+                              <a href={fileUrl(stud.resumeUrl)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[10px] text-primary hover:underline font-semibold">
                                 <Download size={11} />
                                 <span>PDF</span>
                               </a>

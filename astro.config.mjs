@@ -7,5 +7,13 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      proxy: {
+        '/uploads': {
+          target: 'https://student-placement-portal-uzqi.onrender.com',
+          changeOrigin: true,
+        },
+      },
+    },
   },
 });
